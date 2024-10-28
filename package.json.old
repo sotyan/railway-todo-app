@@ -17,10 +17,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
-    "eslint": "8.23.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-react": "^1.1.7",
-    "eslint-config-react-app": "^7.0.1",
+    "eslint": "^9.13.0",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.11.0",
     "prettier": "3.3.3",
@@ -30,9 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint .",
-    "fix": "npx prettier . --write"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
