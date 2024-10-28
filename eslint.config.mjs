@@ -1,6 +1,6 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
-import pluginReact from "eslint-plugin-react";
+import pluginReact, { rules } from "eslint-plugin-react";
 import eslintConfigPrettier from "eslint-config-prettier";
 
 
@@ -13,7 +13,11 @@ export default [
     react: {
       version: 'detect',
     }
-  }},
+  },
+  rules: {
+    "indent": "error",
+  }
+},
   {extends: ["prettier"]},
   eslintConfigPrettier
 ];
