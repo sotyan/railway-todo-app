@@ -19,9 +19,20 @@ export const NewTask = () => {
   const handleLimitChange = (e) => setLimit(e.target.value);
   const handleDetailChange = (e) => setDetail(e.target.value);
   const handleSelectList = (id) => setSelectListId(id);
+  var plus9Hours = (limit) =>{// 9時間ずれる問題を解消
+    limit = new Date(limit);
+    limit.setHours(limit.getHours() + 9);
+    return limit;
+  }
+  var formatLimitforAPI = (limit) =>{
+    limit = limit.toISOString();
+    limit = limit.split('.')[0] + 'Z';
+    return limit;
+  }
   const onCreateTask = () => {
-    // const formattedDateTime = limit.toISOString().split('.')[0] + 'Z';
-    const formatLimit = limit + ":00Z"; // APIの形にフォーマット
+    // limitのフォーマットを整える
+    var formatLimit = plus9Hours(limit);
+    formatLimit = formatLimitforAPI(formatLimit);
     const data = {
       title: title,
       detail: detail,

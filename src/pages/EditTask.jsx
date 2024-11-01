@@ -12,17 +12,33 @@ export const EditTask = () => {
   const [cookies] = useCookies();
   const [title, setTitle] = useState("");
   const [detail, setDetail] = useState("");
+  const [limit, setLimit] = useState("");
   const [isDone, setIsDone] = useState();
   const [errorMessage, setErrorMessage] = useState("");
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleDetailChange = (e) => setDetail(e.target.value);
+  const handleLimitChange = (e) => setLimit(e.target.value);
   const handleIsDoneChange = (e) => setIsDone(e.target.value === "done");
+  var plus9Hours = (limit) =>{// 9時間ずれる問題を解消
+    limit = new Date(limit);
+    limit.setHours(limit.getHours() + 9);
+    return limit;
+  }
+  var formatLimitforAPI = (limit) =>{
+    limit = limit.toISOString();
+    limit = limit.split('.')[0] + 'Z';
+    return limit;
+  }
   const onUpdateTask = () => {
+    var formatLimit = plus9Hours(limit) // stringからDateオブジェクトにする
+    formatLimit = formatLimitforAPI(formatLimit); // APIのフォーマットに修正
+    console.log(formatLimit);
     console.log(isDone);
     const data = {
       title: title,
       detail: detail,
       done: isDone,
+      limit: formatLimit,
     };
 
     axios
@@ -67,6 +83,7 @@ export const EditTask = () => {
         setTitle(task.title);
         setDetail(task.detail);
         setIsDone(task.done);
+        setLimit((task.limit).split(':')[0]+':'+(task.limit).split(':')[1]);
       })
       .catch((err) => {
         setErrorMessage(`タスク情報の取得に失敗しました。${err}`);
@@ -97,6 +114,16 @@ export const EditTask = () => {
             className="edit-task-detail"
             value={detail}
           />
+          <br />
+          <label>期限</label>
+          <br />
+          <input
+            type="datetime-local"
+            onChange={handleLimitChange}
+            className="edit-task-limit"
+            value={limit}
+          />
+          <br />
           <br />
           <div>
             <input
