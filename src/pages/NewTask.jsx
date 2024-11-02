@@ -10,18 +10,34 @@ export const NewTask = () => {
   const [selectListId, setSelectListId] = useState();
   const [lists, setLists] = useState([]);
   const [title, setTitle] = useState("");
+  const [limit, setLimit] = useState("");
   const [detail, setDetail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [cookies] = useCookies();
   const navigate = useNavigate();
   const handleTitleChange = (e) => setTitle(e.target.value);
+  const handleLimitChange = (e) => setLimit(e.target.value);
   const handleDetailChange = (e) => setDetail(e.target.value);
   const handleSelectList = (id) => setSelectListId(id);
+  var plus9Hours = (limit) =>{// 9時間ずれる問題を解消
+    limit = new Date(limit);
+    limit.setHours(limit.getHours() + 9);
+    return limit;
+  }
+  var formatLimitforAPI = (limit) =>{
+    limit = limit.toISOString();
+    limit = limit.split('.')[0] + 'Z';
+    return limit;
+  }
   const onCreateTask = () => {
+    // limitのフォーマットを整える
+    var formatLimit = plus9Hours(limit);
+    formatLimit = formatLimitforAPI(formatLimit);
     const data = {
       title: title,
       detail: detail,
       done: false,
+      limit: formatLimit,
     };
 
     axios
@@ -89,6 +105,15 @@ export const NewTask = () => {
             onChange={handleDetailChange}
             className="new-task-detail"
           />
+          <br />
+          <label>期限</label>
+          <br />
+          <input 
+            type="datetime-local"
+            onChange={handleLimitChange}
+            className="new-task-limit"
+          />
+          <br />
           <br />
           <button
             type="button"
