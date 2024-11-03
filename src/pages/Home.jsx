@@ -203,7 +203,7 @@ const formatShowRestLimit = (limit) =>{
   if(restLimit<=0) return "期限切れ";
   const day = String(Math.floor(restLimit/(3600000*24))).padStart(2,'0');
   const hours = String(Math.floor((restLimit%(3600000*24))/3600000)).padStart(2, '0');
-  const minutes = String(Math.floor(((restLimit%(3600000*24))%3600000)/36000)).padStart(2, '0');
+  const minutes = String(Math.floor(((restLimit%(3600000*24))%3600000)/60000)).padStart(2, '0');
   return (day+'日'+hours+'時間'+minutes+'分');
 
 }
