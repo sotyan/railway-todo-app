@@ -63,6 +63,11 @@ export const Home = () => {
         setErrorMessage(`タスクの取得に失敗しました。${err}`);
       });
   };
+  const pressEnter = (event, id) => {
+    if (event.key === "Enter"){
+      handleSelectList(id);
+    }
+  };
   return (
     <div>
       <Header />
@@ -82,7 +87,7 @@ export const Home = () => {
               </p>
             </div>
           </div>
-          <ul className="list-tab">
+          <ul className="list-tab" role="tablist">
             {lists.map((list, key) => {
               const isActive = list.id === selectListId;
               return (
@@ -90,6 +95,9 @@ export const Home = () => {
                   key={key}
                   className={`list-tab-item ${isActive ? "active" : ""}`}
                   onClick={() => handleSelectList(list.id)}
+                  role="tab"
+                  tabIndex={2}
+                  onKeyDown={(event) => pressEnter(event, list.id)}
                 >
                   {list.title}
                 </li>
