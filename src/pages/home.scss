@@ -29,6 +29,7 @@
   border: solid 1px #242f9b;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .active {
@@ -103,14 +104,14 @@
   
   .list-tab-item {
     flex-shrink: 0;
-    width: 60px;
+    width: 71px;
     padding: 0 25px;
     text-overflow: normal;
     margin-right: 5px;
     border: solid 1px #242f9b;
     justify-content: center;
     align-items: center;
-    padding-right: 6px;
+    text-align: center;
   }
   
   .active {
@@ -196,11 +197,23 @@ h2.home-h{
   text-overflow: normal;
   margin-right: 5px;
   border: solid 1px #242f9b;
+  font-size: $text-size;
   justify-content: center;
   align-items: center;
-  font-size: $text-size;
-  padding-right: 30px;
+  text-align: center;
 }
+ .list-tab-item {
+    flex-shrink: 0;
+    width: 51px;
+    padding: 0 25px;
+    text-overflow: normal;
+    margin-right: 5px;
+    border: solid 1px #242f9b;
+    font-size: $text-size;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 
 .active {
   background-color: #242f9b;
