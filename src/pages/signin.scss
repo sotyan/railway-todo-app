@@ -85,9 +85,10 @@ h2{
   width: 50%;
   margin: 0 auto;
 }
-h2{
+h2.before-login{
   font-size: $text-size-large;
   margin-top: 5px;
+  
 }
 
 .signin-form {
@@ -102,7 +103,7 @@ h2{
 
 .email-input,
 .password-input {
-  width: 100%;
+  width: 10%;
   font-size: large;
   height: 30px;
   margin-bottom: 25px;

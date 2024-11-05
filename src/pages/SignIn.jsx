@@ -37,7 +37,7 @@ export const SignIn = () => {
     <div>
       <Header />
       <main className="signin">
-        <h2>サインイン</h2>
+        <h2 className="before-login">サインイン</h2>
         <p className="error-message">{errorMessage}</p>
         <form className="signin-form">
           <label className="email-label">メールアドレス</label>

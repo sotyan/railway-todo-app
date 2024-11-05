@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+// pc
 .signup {
   width: 50%;
   margin: 0 auto;
@@ -29,4 +29,87 @@
 
 .error-message {
   color: #ff3333;
+}
+
+// iPad
+@media all and (max-width: 768px){
+$text-size: 25px;
+$text-size-large: 30px;
+  .signup {
+    width: 50%;
+    margin: 0 auto;
+  }
+  h2{
+    font-size: $text-size-large;
+  }
+  .signup-form {
+    margin: 25px 0;
+    color: #555555;
+  }
+  .username-label {
+    color: #555555;
+    font-size: $text-size; 
+  }
+  
+  .email-input,
+  .name-input,
+  .password-input {
+    width: 100%;
+    font-size: large;
+    height: 30px;
+    margin-bottom: 25px;
+  }
+  
+  .signup-button {
+    background-color: #242f9b;
+    color: #ffffff;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  
+  .error-message {
+    color: #ff3333;
+  }
+}
+
+// iPhoneSE
+@media all and (max-width: 320px){
+$text-size: 15px;
+$text-size-large: 20px;
+  .signup {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  .signup-form {
+    margin: 7px 0;
+    color: #555555;
+  }
+
+  .username-label {
+    color: #555555;
+    font-size: $text-size; 
+  }
+  
+  .email-input,
+  .name-input,
+  .password-input {
+    width: 100%;
+    font-size: large;
+    height: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .signup-button {
+    background-color: #242f9b;
+    color: #ffffff;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  
+  .error-message {
+    color: #ff3333;
+  }
 }
