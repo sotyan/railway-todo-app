@@ -35,7 +35,7 @@ export const NewList = () => {
     <div>
       <Header />
       <main className="new-list">
-        <h2>リスト新規作成</h2>
+        <h2 className="newlist-h">リスト新規作成</h2>
         <p className="error-message">{errorMessage}</p>
         <form className="new-list-form">
           <label>タイトル</label>

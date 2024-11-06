@@ -67,7 +67,7 @@ export const EditList = () => {
     <div>
       <Header />
       <main className="edit-list">
-        <h2>リスト編集</h2>
+        <h2 className="editlist-h">リスト編集</h2>
         <p className="error-message">{errorMessage}</p>
         <form className="edit-list-form">
           <label>タイトル</label>

@@ -75,7 +75,7 @@ export const Home = () => {
         <p className="error-message">{errorMessage}</p>
         <div>
           <div className="list-header">
-            <h2>リスト一覧</h2>
+            <h2 className="home-h">リスト一覧</h2>
             <div className="list-menu">
               <p>
                 <Link to="/list/new">リスト新規作成</Link>
@@ -106,7 +106,7 @@ export const Home = () => {
           </ul>
           <div className="tasks">
             <div className="tasks-header">
-              <h2>タスク一覧</h2>
+              <h2 className="home-h">タスク一覧</h2>
               <Link to="/task/new">タスク新規作成</Link>
             </div>
             <div className="display-select-wrapper">

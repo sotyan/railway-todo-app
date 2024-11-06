@@ -94,7 +94,7 @@ export const EditTask = () => {
     <div>
       <Header />
       <main className="edit-task">
-        <h2>タスク編集</h2>
+        <h2 className="edittask-h">タスク編集</h2>
         <p className="error-message">{errorMessage}</p>
         <form className="edit-task-form">
           <label>タイトル</label>

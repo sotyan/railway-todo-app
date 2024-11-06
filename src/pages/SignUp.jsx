@@ -45,10 +45,10 @@ export const SignUp = () => {
     <div>
       <Header />
       <main className="signup">
-        <h2>新規作成</h2>
+        <h2 className="before-login">新規作成</h2>
         <p className="error-message">{errorMessage}</p>
         <form className="signup-form">
-          <label>メールアドレス</label>
+          <label className="email-label">メールアドレス</label>
           <br />
           <input
             type="email"
@@ -56,7 +56,7 @@ export const SignUp = () => {
             className="email-input"
           />
           <br />
-          <label>ユーザ名</label>
+          <label className="username-label">ユーザ名</label>
           <br />
           <input
             type="text"
@@ -64,7 +64,7 @@ export const SignUp = () => {
             className="name-input"
           />
           <br />
-          <label>パスワード</label>
+          <label className="password-label">パスワード</label>
           <br />
           <input
             type="password"

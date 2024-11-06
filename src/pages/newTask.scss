@@ -1,8 +1,13 @@
 @charset "utf-8";
-
+$items-width: 300px;
+// pc
 .new-task {
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 項目を縦方向に中央揃え */
+  justify-content: center; /* 項目を横方向に中央揃え */
 }
 
 .new-task-form {
@@ -31,4 +36,117 @@
 
 .error-message {
   color: #ff3333;
+}
+
+// iPad
+@media all and (max-width: 768px){
+$text-size: 25px;
+$text-size-large: 30px;
+$button-size: 18px;
+h2.newtask-h{
+  font-size: $text-size-large;
+}
+.new-task {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 項目を縦方向に中央揃え */
+  justify-content: center; /* 項目を横方向に中央揃え */
+  font-size: $text-size;
+}
+
+.new-task-form {
+  color: #555555;
+  font-size: $text-size;
+}
+
+.new-task-select-list,
+.new-task-title {
+  width: 400px;
+  margin-bottom: 15px;
+  font-size: $text-size;
+}
+
+.new-task-detail {
+  width: 400px;
+  margin-bottom: 15px;
+  height: 200px;
+  font-size: $text-size;
+}
+.new-task-limit {
+  width: 220px;
+  font-size: $text-size - 5px;
+}
+
+.new-task-button {
+  background-color: #242f9b;
+  color: #ffffff;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: $button-size;
+}
+
+.error-message {
+  color: #ff3333;
+  font-size: $text-size;
+}
+
+
+}
+// iPhoneSE
+@media all and (max-width: 320px){
+$text-size: 15px;
+$text-size-large: 20px;
+$button-size: 12px;
+h2.newtask-h{
+  font-size: $text-size-large;
+}
+.new-task {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 項目を縦方向に中央揃え */
+  justify-content: center; /* 項目を横方向に中央揃え */
+  font-size: $text-size;
+}
+
+.new-task-form {
+  color: #555555;
+  font-size: $text-size;
+}
+
+.new-task-select-list,
+.new-task-title {
+  width: 200px;
+  margin-bottom: 15px;
+  font-size: $text-size;
+}
+
+.new-task-detail {
+  width: 200px;
+  margin-bottom: 15px;
+  height: 200px;
+  font-size: $text-size;
+}
+.new-task-limit {
+  width: 120px;
+  font-size: $text-size - 5px;
+}
+
+.new-task-button {
+  background-color: #242f9b;
+  color: #ffffff;
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: $button-size;
+}
+
+.error-message {
+  color: #ff3333;
+  font-size: $text-size;
+}
 }
