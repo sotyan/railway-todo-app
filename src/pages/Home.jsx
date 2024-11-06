@@ -64,7 +64,7 @@ export const Home = () => {
       });
   };
   const pressEnter = (event, id) => {
-    if (event.key === "Enter"){
+    if (event.key === "Enter") {
       handleSelectList(id);
     }
   };
@@ -135,7 +135,8 @@ const Tasks = (props) => {
   const { tasks, selectListId, isDoneDisplay } = props;
   if (tasks === null) return <></>;
 
-  if (isDoneDisplay == "done") {// 完了
+  if (isDoneDisplay == "done") {
+    // 完了
     return (
       <ul>
         {tasks
@@ -152,7 +153,7 @@ const Tasks = (props) => {
                 <br />
                 {task.done ? "完了" : "未完了"}
                 <br />
-                <Limit limit={task.limit}/>
+                <Limit limit={task.limit} />
               </Link>
             </li>
           ))}
@@ -160,7 +161,8 @@ const Tasks = (props) => {
     );
   }
 
-  return (// 未完了
+  return (
+    // 未完了
     <ul>
       {tasks
         .filter((task) => {
@@ -176,7 +178,7 @@ const Tasks = (props) => {
               <br />
               {task.done ? "完了" : "未完了"}
               <br />
-              <Limit limit={task.limit}/>
+              <Limit limit={task.limit} />
             </Link>
           </li>
         ))}
@@ -184,38 +186,44 @@ const Tasks = (props) => {
   );
 };
 
-var minus9Hours = (limit) =>{// 9時間ずれる問題を解消
+var minus9Hours = (limit) => {
+  // 9時間ずれる問題を解消
   limit = new Date(limit);
   limit.setHours(limit.getHours() - 9);
   return limit;
-}
-const formatShowLimit = (limit) =>{
-  const year = String(limit.getFullYear()).padStart(4,'0');
-  const month = String(limit.getMonth()+1).padStart(2, '0');
-  const day = String(limit.getDate()).padStart(2, '0');
-  const hours = String(limit.getHours()).padStart(2, '0');
-  const minutes = String(limit.getMinutes()).padStart(2, '0');
-  return (year+'年'+month+'月'+day+'日 '+ hours +'時'+ minutes+'分')
-}
-const formatShowRestLimit = (limit) =>{
+};
+const formatShowLimit = (limit) => {
+  const year = String(limit.getFullYear()).padStart(4, "0");
+  const month = String(limit.getMonth() + 1).padStart(2, "0");
+  const day = String(limit.getDate()).padStart(2, "0");
+  const hours = String(limit.getHours()).padStart(2, "0");
+  const minutes = String(limit.getMinutes()).padStart(2, "0");
+  return (
+    year + "年" + month + "月" + day + "日 " + hours + "時" + minutes + "分"
+  );
+};
+const formatShowRestLimit = (limit) => {
   const nowTime = new Date();
   const restLimit = limit - nowTime;
-  if(restLimit<=0) return "期限切れ";
-  const day = String(Math.floor(restLimit/(3600000*24))).padStart(2,'0');
-  const hours = String(Math.floor((restLimit%(3600000*24))/3600000)).padStart(2, '0');
-  const minutes = String(Math.floor(((restLimit%(3600000*24))%3600000)/60000)).padStart(2, '0');
-  return (day+'日'+hours+'時間'+minutes+'分');
-
-}
-const Limit = (props) =>{
+  if (restLimit <= 0) return "期限切れ";
+  const day = String(Math.floor(restLimit / (3600000 * 24))).padStart(2, "0");
+  const hours = String(
+    Math.floor((restLimit % (3600000 * 24)) / 3600000),
+  ).padStart(2, "0");
+  const minutes = String(
+    Math.floor(((restLimit % (3600000 * 24)) % 3600000) / 60000),
+  ).padStart(2, "0");
+  return day + "日" + hours + "時間" + minutes + "分";
+};
+const Limit = (props) => {
   const limit = minus9Hours(props.limit);
   const showLimit = formatShowLimit(limit);
   const showRestLimit = formatShowRestLimit(limit);
-  return(
+  return (
     <div className="limit">
-    期限日時：{showLimit}
-    <br />
-    残り日時：{showRestLimit}
+      期限日時：{showLimit}
+      <br />
+      残り日時：{showRestLimit}
     </div>
-  )
-}
+  );
+};

@@ -1,0 +1,14 @@
+// .eslintrc.json
+{
+    "rules": {
+    //   "no-unused-vars": "off", // 'no-unused-vars'ルールを無効化
+    },
+    "parserOptions": {
+        // "ecmaVersion": 7, 
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    }
+  }
