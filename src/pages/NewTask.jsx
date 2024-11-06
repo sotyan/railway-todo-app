@@ -74,7 +74,7 @@ export const NewTask = () => {
     <div>
       <Header />
       <main className="new-task">
-        <h2>タスク新規作成</h2>
+        <h2 className="newtask-h">タスク新規作成</h2>
         <p className="error-message">{errorMessage}</p>
         <form className="new-task-form">
           <label>リスト</label>
