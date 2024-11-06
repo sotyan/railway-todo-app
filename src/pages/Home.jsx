@@ -153,7 +153,7 @@ const Tasks = (props) => {
                 <br />
                 {task.done ? "完了" : "未完了"}
                 <br />
-                <Limit limit={task.limit} />
+                <Limit limit={task.limit} complete={task.done} />
               </Link>
             </li>
           ))}
@@ -218,7 +218,8 @@ const formatShowRestLimit = (limit) => {
 const Limit = (props) => {
   const limit = minus9Hours(props.limit);
   const showLimit = formatShowLimit(limit);
-  const showRestLimit = formatShowRestLimit(limit);
+  var showRestLimit;
+  (props.complete) ? showRestLimit = "完了済み" : showRestLimit = formatShowRestLimit(limit);
   return (
     <div className="limit">
       期限日時：{showLimit}
