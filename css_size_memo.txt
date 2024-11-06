@@ -2,10 +2,12 @@
 @media all and (max-width: 768px){
 $text-size: 25px;
 $text-size-large: 30px;
+$button-size: 18px;
 }
 
 // iPhoneSE
 @media all and (max-width: 320px){
 $text-size: 15px;
 $text-size-large: 20px;
+$button-size: 12px;
 }

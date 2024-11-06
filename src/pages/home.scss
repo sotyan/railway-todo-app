@@ -86,7 +86,9 @@
     list-style: none;
     width: 100%;
   }
-  
+  h2.home-h{
+    font-size: $text-size-large;
+  }
   .list-header {
     display: flex;
     justify-content: space-between;
