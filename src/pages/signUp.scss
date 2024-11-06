@@ -32,14 +32,14 @@
 }
 
 // iPad
-@media all and (max-width: 768px){
-$text-size: 25px;
-$text-size-large: 30px;
+@media all and (max-width: 768px) {
+  $text-size: 25px;
+  $text-size-large: 30px;
   .signup {
     width: 50%;
     margin: 0 auto;
   }
-  h2{
+  h2 {
     font-size: $text-size-large;
   }
   .signup-form {
@@ -48,9 +48,9 @@ $text-size-large: 30px;
   }
   .username-label {
     color: #555555;
-    font-size: $text-size; 
+    font-size: $text-size;
   }
-  
+
   .email-input,
   .name-input,
   .password-input {
@@ -59,7 +59,7 @@ $text-size-large: 30px;
     height: 30px;
     margin-bottom: 25px;
   }
-  
+
   .signup-button {
     background-color: #242f9b;
     color: #ffffff;
@@ -67,21 +67,21 @@ $text-size-large: 30px;
     height: 40px;
     border-radius: 5px;
   }
-  
+
   .error-message {
     color: #ff3333;
   }
 }
 
 // iPhoneSE
-@media all and (max-width: 320px){
-$text-size: 15px;
-$text-size-large: 20px;
+@media all and (max-width: 320px) {
+  $text-size: 15px;
+  $text-size-large: 20px;
   .signup {
     width: 50%;
     margin: 0 auto;
   }
-  
+
   .signup-form {
     margin: 7px 0;
     color: #555555;
@@ -89,9 +89,9 @@ $text-size-large: 20px;
 
   .username-label {
     color: #555555;
-    font-size: $text-size; 
+    font-size: $text-size;
   }
-  
+
   .email-input,
   .name-input,
   .password-input {
@@ -100,7 +100,7 @@ $text-size-large: 20px;
     height: 20px;
     margin-bottom: 25px;
   }
-  
+
   .signup-button {
     background-color: #242f9b;
     color: #ffffff;
@@ -108,7 +108,7 @@ $text-size-large: 20px;
     height: 30px;
     border-radius: 5px;
   }
-  
+
   .error-message {
     color: #ff3333;
   }

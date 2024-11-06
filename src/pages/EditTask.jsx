@@ -19,18 +19,19 @@ export const EditTask = () => {
   const handleDetailChange = (e) => setDetail(e.target.value);
   const handleLimitChange = (e) => setLimit(e.target.value);
   const handleIsDoneChange = (e) => setIsDone(e.target.value === "done");
-  var plus9Hours = (limit) =>{// 9時間ずれる問題を解消
+  var plus9Hours = (limit) => {
+    // 9時間ずれる問題を解消
     limit = new Date(limit);
     limit.setHours(limit.getHours() + 9);
     return limit;
-  }
-  var formatLimitforAPI = (limit) =>{
+  };
+  var formatLimitforAPI = (limit) => {
     limit = limit.toISOString();
-    limit = limit.split('.')[0] + 'Z';
+    limit = limit.split(".")[0] + "Z";
     return limit;
-  }
+  };
   const onUpdateTask = () => {
-    var formatLimit = plus9Hours(limit) // stringからDateオブジェクトにする
+    var formatLimit = plus9Hours(limit); // stringからDateオブジェクトにする
     formatLimit = formatLimitforAPI(formatLimit); // APIのフォーマットに修正
     console.log(formatLimit);
     console.log(isDone);
@@ -83,7 +84,7 @@ export const EditTask = () => {
         setTitle(task.title);
         setDetail(task.detail);
         setIsDone(task.done);
-        setLimit((task.limit).split(':')[0]+':'+(task.limit).split(':')[1]);
+        setLimit(task.limit.split(":")[0] + ":" + task.limit.split(":")[1]);
       })
       .catch((err) => {
         setErrorMessage(`タスク情報の取得に失敗しました。${err}`);

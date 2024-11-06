@@ -7,7 +7,6 @@
 
 .signin-form {
   margin: 25px 0;
-  
 }
 
 .email-label,
@@ -36,91 +35,90 @@
 }
 
 // ipad
-@media all and (max-width: 768px){
-$text-size: 25px;
-$text-size-large: 30px;
-.signin {
-  width: 50%;
-  margin: 0 auto;
-}
-h2.before-login{
-  font-size: $text-size-large;
-}
+@media all and (max-width: 768px) {
+  $text-size: 25px;
+  $text-size-large: 30px;
+  .signin {
+    width: 50%;
+    margin: 0 auto;
+  }
+  h2.before-login {
+    font-size: $text-size-large;
+  }
 
-.signin-form {
-  margin: 25px 0;
-}
+  .signin-form {
+    margin: 25px 0;
+  }
 
-.email-label,
-.password-label {
-  color: #555555;
-  font-size: $text-size;
-}
+  .email-label,
+  .password-label {
+    color: #555555;
+    font-size: $text-size;
+  }
 
-.email-input,
-.password-input {
-  width: 100%;
-  font-size: large;
-  height: 30px;
-  margin-bottom: 2px;
-}
+  .email-input,
+  .password-input {
+    width: 100%;
+    font-size: large;
+    height: 30px;
+    margin-bottom: 2px;
+  }
 
-.signin-button {
-  background-color: #242f9b;
-  color: #ffffff;
-  width: 100px;
-  height: 40px;
-  border-radius: 5px;
-}
+  .signin-button {
+    background-color: #242f9b;
+    color: #ffffff;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+  }
 
-.error-message {
-  color: #ff3333;
-}
+  .error-message {
+    color: #ff3333;
+  }
 }
 // iPhoneSE
-@media all and (max-width: 320px){
+@media all and (max-width: 320px) {
   $text-size: 15px;
   $text-size-large: 20px;
-.signin {
-  width: 50%;
-  margin: 0 auto;
-}
-h2.before-login{
-  font-size: $text-size-large;
-  margin-top: 5px;
-  
-}
+  .signin {
+    width: 50%;
+    margin: 0 auto;
+  }
+  h2.before-login {
+    font-size: $text-size-large;
+    margin-top: 5px;
+  }
 
-.signin-form {
-  margin: 7px 0;
-}
+  .signin-form {
+    margin: 7px 0;
+  }
 
-.email-label,
-.password-label {
-  color: #555555;
-  font-size: $text-size;
-}
+  .email-label,
+  .password-label {
+    color: #555555;
+    font-size: $text-size;
+  }
 
-.email-input,
-.password-input {
-  width: 10%;
-  font-size: large;
-  height: 30px;
-  margin-bottom: 25px;
-  font-size: $text-size;
-}
+  .email-input,
+  .password-input {
+    width: 10%;
+    font-size: large;
+    height: 30px;
+    margin-bottom: 25px;
+    font-size: $text-size;
+  }
 
-.signin-button {
-  background-color: #242f9b;
-  color: #ffffff;
-  width: 100px;
-  height: 30px;
-  border-radius: 5px;
-  font-size: $text-size;
-}
+  .signin-button {
+    background-color: #242f9b;
+    color: #ffffff;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: $text-size;
+  }
 
-.error-message {
-  color: #ff3333;
-  font-size: $text-size;
-}
+  .error-message {
+    color: #ff3333;
+    font-size: $text-size;
+  }
 }

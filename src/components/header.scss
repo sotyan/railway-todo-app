@@ -15,7 +15,7 @@
 }
 
 // iPad
-@media all and (max-width: 768px){
+@media all and (max-width: 768px) {
   .header {
     width: 100%;
     height: 60px;
@@ -24,14 +24,14 @@
     display: flex;
     justify-content: space-between;
   }
-  
+
   .sign-out-button {
     color: #ffffff;
     margin: auto 25px auto auto;
   }
 }
 // iPhoneSE
-@media all and (max-width: 320px){
+@media all and (max-width: 320px) {
   .header {
     width: 100%;
     height: 50px;
@@ -43,7 +43,7 @@
   h1 {
     font-size: 30px;
   }
-  
+
   .sign-out-button {
     color: #ffffff;
     margin: auto 25px auto auto;
